@@ -1,0 +1,33 @@
+import java.util.*;
+public class Solution{
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int arr[]=new int[n];
+        int sum=0;
+        
+        for(int i=0;i<n;i++){
+            arr[i]=sc.nextInt();
+        }
+        
+        int thresh=sc.nextInt();
+        
+        for(int i=0;i<n;i++){
+            int temp=arr[i];
+            int count=0;
+            
+            while(temp>0){
+                if(temp>=thresh){
+                    temp-=thresh;
+                }
+                else{
+                    temp=0;
+                }
+                count++;
+            }
+            sum+=count;
+        }
+        
+        System.out.println(sum);
+    }
+}
