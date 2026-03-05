@@ -1,0 +1,27 @@
+import java.util.*;
+public class Solution{
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        
+        boolean isTrue=true;
+        
+        int n=sc.nextInt();
+        
+        while(n>=10){
+            int temp=n%10;
+            int temp2=(n/10)%10;
+            
+            if(Math.abs(temp-temp2)!=1){
+                isTrue=false;
+                break;
+            }
+            n=n/10;
+        }
+        
+        if(isTrue){
+            System.out.println("yes");
+        }else{
+            System.out.println("no");
+        }
+    }
+}
