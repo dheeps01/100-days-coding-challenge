@@ -1,0 +1,40 @@
+import java.util.*;
+public class Solution{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+        
+        int b[] = new int[n];
+        int j[] = new int[m];
+        
+        for(int i=0;i<n;i++){
+            b[i]=sc.nextInt();
+        }
+        for(int i=0;i<m;i++){
+            j[i]=sc.nextInt();
+        }
+        
+        boolean printed=false;
+        for(int i=0;i<n;i++){
+            boolean divisible=false;
+            
+            for(int k=0;k<m;k++){
+                if(j[k]!=0 && b[i]%j[k]==0){
+                    divisible=true;
+                    break;
+                }
+            }
+            
+            if(!divisible){
+                System.out.print(b[i]+" ");
+                printed=true;
+            }
+        }
+        
+        if(!printed){
+            System.out.print("-1");
+        }
+    }
+}
